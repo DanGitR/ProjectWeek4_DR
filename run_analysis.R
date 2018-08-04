@@ -16,7 +16,9 @@ avgdataframe  <- avgdata(tidydataframe)# call to dedicated function that creates
 View(tidydataframe)
 View(avgdataframe)
 write.csv(avgdataframe, file = "avgdataframe.csv")#write the avgdataframe.csv file to the functionpath directory.
-#NOTE: use "read.csv("avgdataframe.csv", row.names = 1)" to read the averaged data back into R.
+write.table(fooavg,file="avgdataframe.txt",row.names=FALSE)#write the avgdataframe.txt file to the functionpath directory.
+#NOTE: use "read.csv("avgdataframe.csv", row.names = 1)" to read the averaged data CSV file back into R.
+#NOTE: use "read.table("avgdataframe.txt", header = TRUE)" to read the averaged data TXT file back into R.
 run_analysis <- list(tidydataframe,avgdataframe)#function returns a list containing the two dataframes 
 
 }

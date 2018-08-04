@@ -19,9 +19,11 @@ A full description is available at the site where the data was obtained:
 The script sources two functions **tidydata.R** and **avgdata.R** that implement the necessary transformations. The necessary *dplyr* library is also loaded by the script.
 A call to **avgdata.R** is followed by a call to **avgdata.R**
 The data frames created by **tidydata.R** and **avgdata.R** are then displayed within R Studio using *View()*.
-The script writes a data frame file named *avgdataframe.csv* to the directory specified by *functionpath*.  
-One can use *read.csv("avgdataframe.csv", row.names = 1)* to read the averaged data frame back into R. 
-The script also returns a list *run_analysis* containing The data frames created by **tidydata.R** and **avgdata.R**.
+The script writes a data frame file named *avgdataframe.csv* to the directory specified by *functionpath*.
+The script writes a data frame file named *avgdataframe.txt* to the directory specified by *functionpath*. 
+One can use *read.csv("avgdataframe.csv", row.names = 1)* to read the averaged data frame back into R.
+One can use *read.table("avgdataframe.txt", header = TRUE)* to read the averaged data frame back into R.
+The script also returns a list *run_analysis* containing the data frames created by **tidydata.R** and **avgdata.R**.
 
 ###Usage
 
@@ -32,7 +34,7 @@ run_analysis <- function(datapath,functionpath)
             For example, *datapath <- "C:/GettingAndCleaningData/Project/UCI HAR Dataset"*
             
 *functionpath*   Contains the path to the directory that contains the **tidydata.R** and **avgdata.R** scripts.  This is also the path where *avgdataframe.csv* is created by *run_analysis.R*.
-            For example, *datapath <- "C:/GettingAndCleaningData/Project"*
+            For example, *functionpath <- "C:/GettingAndCleaningData/Project"*
             
 ###Details
 The script was created for use within R Studio Version 1.1.453 running version 3.5.1 of R, along with the *dplyr* library.
